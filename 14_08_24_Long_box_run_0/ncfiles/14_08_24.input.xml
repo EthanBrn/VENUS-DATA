@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.impex.latmos.ipsl.fr"
+      xsi:schemaLocation="http://impex.latmos.ipsl.fr/doc/impex+spase_latest.xsd">
+<Version>2.2.2</Version>
+<SimulationRun>
+<ResourceID>impex://LATMOS/Hybrid/earth_14_08_24/SimRun</ResourceID>
+<Description />
+<ResourceHeader>
+<ResourceName>LatHyS_earth_14_08_24</ResourceName>
+<ReleaseDate>2024-08-14T00:00:00.000</ReleaseDate>
+<Contact>
+<PersonID>LATMOS</PersonID>
+<Role>DataProducer</Role>
+</Contact>
+</ResourceHeader>
+<Model>
+<ModelID>impex://LATMOS/Hybrid</ModelID>
+</Model>
+<TemporalDependence>No</TemporalDependence>
+<ObservedRegion>earth</ObservedRegion>
+<SimulationTime>
+<Duration>PTInfinityS</Duration>
+<TimeStart>00:00:00</TimeStart>
+<TimeStep>PTInfinityS</TimeStep>
+</SimulationTime>
+<SimulationDomain>
+<CoordinateSystem>
+<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+<CoordinateSystemName></CoordinateSystemName>
+</CoordinateSystem>
+<SpatialDimension>3</SpatialDimension>
+<VelocityDimension>3</VelocityDimension>
+<FieldDimension>3</FieldDimension>
+<Units>km</Units>
+<UnitsConversion> 1000 > m </UnitsConversion>
+<AxesLabel>X Y Z</AxesLabel>
+<BoxSize>92626.1     741.0     741.0</BoxSize>
+<ValidMin>-83363.5    -370.5    -370.5</ValidMin>
+<ValidMax>9262.6     370.5     370.5</ValidMax>
+<GridStructure>Constant</GridStructure>
+<GridCellSize>92.6    92.6    92.6</GridCellSize>
+<Symmetry>Axial</Symmetry>
+<BoundaryConditions>
+<ParticleBoundary>
+<FrontWall> absorbing </FrontWall>
+<BackWall> absorbing </BackWall>
+<SideWall> absorbing </SideWall>
+<Obstacle> absorbing </Obstacle>
+</ParticleBoundary>
+<FieldBoundary>
+<FrontWall> IMF </FrontWall>
+<BackWall> Neuman zero-gradient </BackWall>
+<SideWall> periodic </SideWall>
+<Obstacle> absorbing </Obstacle>
+</FieldBoundary>
+</BoundaryConditions>
+</SimulationDomain>
+<RegionParameter>
+<SimulatedRegion>earth</SimulatedRegion>
+<Radius Units="km">0.00</Radius>
+<SubLatitude>0.00</SubLatitude>
+<SubLongitude>-1.00</SubLongitude>
+<Property>
+<Name>Exobase Altitude</Name>
+<Description>Altitude of the exobase</Description>
+<PropertyQuantity>Positional</PropertyQuantity>
+<Units>km</Units>
+<PropertyValue>0.00</PropertyValue>
+</Property>
+<Property>
+<Name>Ionopause Altitude</Name>
+<Description>Altitude of the ionopause in the model
+That is the altitude below which ion densities are computed analytically</Description>
+<PropertyQuantity>Positional</PropertyQuantity>
+<PropertyValue>0.00</PropertyValue>
+</Property>
+</RegionParameter>
+<InputField>
+<Name>IMF</Name>
+<Description>Interplanetary Magnetic Field</Description>
+<SimulatedRegion>Heliosphere</SimulatedRegion>
+<FieldQuantity>Magnetic</FieldQuantity>
+<Units>nT</Units>
+<InputLabel>Bx By Bz</InputLabel>
+<InputValue>0.00    0.00    0.00</InputValue>
+<ValidMin>0.00</ValidMin>
+<ValidMax>0.00</ValidMax>
+</InputField>
+<InputPopulation>
+<Name>Solar Wind electrons</Name>
+<Description>Solar wind electron fluid</Description>
+<SimulatedRegion>Heliosphere</SimulatedRegion>
+<SimulatedRegion>Incident</SimulatedRegion>
+<PopulationType>electron</PopulationType>
+<PopulationMassNumber>0</PopulationMassNumber>
+<PopulationChargeState>-1</PopulationChargeState>
+<PopulationDensity Units="cm^-3">6.00E+00</PopulationDensity>
+<PopulationTemperature Units="eV" UnitsConversion="11605 > K">0.00</PopulationTemperature>
+<PopulationFlowSpeed Units="km/s">NaN</PopulationFlowSpeed>
+<Profile>Adiabatic</Profile>
+<Distribution>Maxwellian</Distribution>
+</InputPopulation>
+<InputPopulation>
+<Name>Solar Wind H</Name>
+<Description>Solar wind H</Description>
+<ObservedRegion>Heliosphere</ObservedRegion>
+<PopulationType>ion</PopulationType>
+<PopulationMassNumber>1</PopulationMassNumber>
+<PopulationChargeState>1</PopulationChargeState>
+<PopulationDensity Units="cm^-3">6.00E+00</PopulationDensity>
+<PopulationTemperature Units="eV" UnitsConversion="11605 > K">0.00</PopulationTemperature>
+<PopulationFlowSpeed Units="km/s">NaN</PopulationFlowSpeed>
+<Distribution>Maxwellian</Distribution>
+</InputPopulation>
+<InputPopulation>
+<Name>Ionospheric electrons</Name>
+<Description>Electron fluid in the planet ionosphere</Description>
+<SimulatedRegion>earth</SimulatedRegion>
+<PopulationType>electron</PopulationType>
+<PopulationMassNumber>0</PopulationMassNumber>
+<PopulationChargeState>-1</PopulationChargeState>
+<PopulationTemperature Units="eV" UnitsConversion="11605 > K">0.00</PopulationTemperature>
+<PopulationFlowSpeed Units="km/s">0</PopulationFlowSpeed>
+<Profile> Temperature for a density of 60.00cm^-3,
+Adiabatic profile below 23.88cm^-3, hydrostatic above.</Profile>
+</InputPopulation>
+<InputParameter>
+<Name>Derived Parameters</Name>
+<ParameterQuantity> Other </ParameterQuantity>
+<Property>
+<Name>Solar UV Flux @ 10.7</Name>
+<PropertyQuantity>SolarUVFlux</PropertyQuantity>
+<PropertyValue>0.00</PropertyValue>
+</Property>
+<Property>
+<Name>Solar UV Flux @ 10.7 Average</Name>
+<PropertyQuantity>ActivityIndex</PropertyQuantity>
+<PropertyValue>0.00</PropertyValue>
+</Property>
+<Property>
+<Name>Alfven Speed</Name>
+<PropertyQuantity>AlfvenVelocity</PropertyQuantity>
+<Units>km/s</Units>
+<PropertyValue>0.00</PropertyValue>
+</Property>
+<Property>
+<Name>Alfven Mach Number</Name>
+<PropertyQuantity>AlfvenMachNumber</PropertyQuantity>
+<PropertyValue>Infinity</PropertyValue>
+</Property>
+<Property>
+<Name>Ion Inertial Length</Name>
+<PropertyQuantity>Other</PropertyQuantity>
+<Units>km</Units>
+<PropertyValue>92.63</PropertyValue>
+</Property>
+</InputParameter>
+</SimulationRun>
+</Spase>
